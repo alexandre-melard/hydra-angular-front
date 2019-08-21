@@ -31,4 +31,12 @@ export class HomeComponent implements OnInit {
     return claims.sub;
   }
 
+  public get email() {
+    const claims: any = this.oauthService.getIdentityClaims();
+    if (!claims) {
+      return null;
+    }
+    return claims.email;
+  }
+
 }
