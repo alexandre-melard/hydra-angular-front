@@ -5,7 +5,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatCardModule, MatInputModule} from '@angular/material';
 
 @NgModule({
-  imports: [MatButtonModule, MatCheckboxModule, MatDialogModule, MatCardModule, MatInputModule],
-  exports: [MatButtonModule, MatCheckboxModule, MatDialogModule, MatCardModule, MatInputModule],
+    imports: [MatButtonModule, MatCheckboxModule, MatDialogModule, MatCardModule, MatInputModule],
+    exports: [MatButtonModule, MatCheckboxModule, MatDialogModule, MatCardModule, MatInputModule],
 })
-export class MaterialModule { }
+export class MaterialModule {
+}

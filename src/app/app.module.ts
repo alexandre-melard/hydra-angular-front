@@ -16,30 +16,30 @@ import {MaterialModule} from './shared/material.module';
 import {ConsentComponent} from './consent/consent.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    SearchComponent,
-    HomeComponent,
-    LoginComponent,
-    ConsentComponent
-  ],
-  imports: [
-    BrowserModule,
-    MaterialModule,
-    FormsModule,
-    HttpClientModule,
-    NoopAnimationsModule,
-    OAuthModule.forRoot(),
-    RouterModule.forRoot([
-      {path: 'search', component: SearchComponent, canActivate: [AuthGuard]},
-      {path: 'home', component: HomeComponent},
-      {path: 'login', component: LoginComponent},
-      {path: 'consent', component: ConsentComponent},
-      {path: '', redirectTo: 'home', pathMatch: 'full'},
-      {path: '**', redirectTo: 'home'}])
-  ],
-  providers: [SearchService, AuthGuard],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        SearchComponent,
+        HomeComponent,
+        LoginComponent,
+        ConsentComponent
+    ],
+    imports: [
+        BrowserModule,
+        MaterialModule,
+        FormsModule,
+        HttpClientModule,
+        NoopAnimationsModule,
+        OAuthModule.forRoot(),
+        RouterModule.forRoot([
+            {path: 'search', component: SearchComponent, canActivate: [AuthGuard]},
+            {path: 'home', component: HomeComponent},
+            {path: 'login', component: LoginComponent},
+            {path: 'consent', component: ConsentComponent},
+            {path: '', redirectTo: 'home', pathMatch: 'full'},
+            {path: '**', redirectTo: 'home'}])
+    ],
+    providers: [SearchService, AuthGuard],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }

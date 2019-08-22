@@ -11,3 +11,7 @@ mat-card-actions, mat-card-content {
     padding: 20px;
     border-top: 1px solid gray;
 }
+
+mat-card-content {
+    text-align: left;
+}

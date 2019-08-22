@@ -1,12 +1,12 @@
 <mat-card>
-  <div class="consent-container">
-    <form (ngSubmit)="onSubmit($event)" name="consentForm" action="{{redirectUri}}" method="post">
-      <p>The application {{clientName}} needs to access the following rights:
-        {{requestedScope}}
-      </p>
-      <input type="hidden" name="consent_challenge" value="{{challenge}}">
-      <input type="hidden" name="authorized_scope" value="{{requestedScope}}">
-      <button type="submit" mat-button>Authorize</button>
-    </form>
-  </div>
+    <div class="consent-container">
+        <form (ngSubmit)="onSubmit($event)" action="{{redirectUri}}" method="post" name="consentForm">
+            <p>The application {{clientName}} needs to access the following rights:
+                {{requestedScope}}
+            </p>
+            <input name="consent_challenge" type="hidden" value="{{challenge}}">
+            <input name="authorized_scope" type="hidden" value="{{requestedScope}}">
+            <button mat-button type="submit">Authorize</button>
+        </form>
+    </div>
 </mat-card>

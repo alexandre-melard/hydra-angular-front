@@ -1,22 +1,23 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {JwksValidationHandler, OAuthService} from 'angular-oauth2-oidc';
 import {authConfig} from './shared/auth/auth.config';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'sso-demo';
+    title = 'sso-demo';
+    host = window.location.hostname;
 
-  constructor(private oauthService: OAuthService) {
-    this.configure();
-  }
+    constructor(private oauthService: OAuthService) {
+        this.configure();
+    }
 
-  private configure() {
-    this.oauthService.configure(authConfig);
-    this.oauthService.tokenValidationHandler = new JwksValidationHandler();
-    this.oauthService.loadDiscoveryDocumentAndTryLogin();
-  }
+    private configure() {
+        this.oauthService.configure(authConfig);
+        this.oauthService.tokenValidationHandler = new JwksValidationHandler();
+        this.oauthService.loadDiscoveryDocumentAndTryLogin();
+    }
 }

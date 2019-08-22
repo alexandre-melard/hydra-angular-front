@@ -1,31 +1,37 @@
 <mat-card>
-  <mat-card-title>
-    <div *ngIf="name">
-      <h1>Welcome, {{name}}!</h1>
-    </div>
-    <div *ngIf="!name">
-      <h2>You need to login in order to access that page</h2>
-    </div>
-  </mat-card-title>
-  <mat-card-content>
-    <h2>User details</h2>
-    <div *ngIf="email">
-      your email: {{email}}
-    </div>
-    <div *ngIf="name">
-      <h2>links you can access</h2>
-      <a mat-raised-button routerLink="/search">Search</a>
-    </div>
-    <div *ngIf="!name">
-      <p>Nothing to show yet</p>
-    </div>
-  </mat-card-content>
-  <mat-card-actions>
-    <div *ngIf="name">
-      <button mat-raised-button (click)="logout()">Logout</button>
-    </div>
-    <div *ngIf="!name">
-      <button mat-raised-button (click)="login()">Login</button>
-    </div>
-  </mat-card-actions>
+    <mat-card-title>
+        <div *ngIf="name">
+            <h2>Welcome, {{name}}!</h2>
+        </div>
+        <div *ngIf="!name">
+            <h2>You need to login in order to access that page</h2>
+        </div>
+    </mat-card-title>
+    <mat-card-content>
+        <h2>Customer details</h2>
+        <div *ngIf="email">
+            <strong>email</strong>: {{email}}
+        </div>
+        <div *ngIf="phone">
+            <strong>phone</strong>: {{phone}}
+        </div>
+        <div *ngIf="company">
+            <strong>company</strong>: {{company}}
+        </div>
+        <div *ngIf="name">
+            <h2>links you can access</h2>
+            <a mat-raised-button routerLink="/search">Search</a>
+        </div>
+        <div *ngIf="!name">
+            <p>Nothing to show yet</p>
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <div *ngIf="name">
+            <button (click)="logout()" mat-raised-button>Logout</button>
+        </div>
+        <div *ngIf="!name">
+            <button (click)="login()" mat-raised-button>Login</button>
+        </div>
+    </mat-card-actions>
 </mat-card>

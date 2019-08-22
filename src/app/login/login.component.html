@@ -1,14 +1,14 @@
 <mat-card>
-  <div class="login-container">
-    <form (ngSubmit)="onSubmit($event)" name="loginForm" action="{{redirectUri}}" method="post">
-      <mat-form-field>
-        <input matInput name="username" placeholder="Login">
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput name="password" placeholder="Password" type="password">
-      </mat-form-field>
-      <input type="hidden" name="login_challenge" value="{{challenge}}">
-      <button type="submit" mat-button>Submit</button>
-    </form>
-  </div>
+    <div class="login-container">
+        <form (ngSubmit)="onSubmit($event)" action="{{redirectUri}}" method="post" name="loginForm">
+            <mat-form-field>
+                <input matInput name="email" placeholder="email">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput name="password" placeholder="Password" type="password">
+            </mat-form-field>
+            <input name="login_challenge" type="hidden" value="{{challenge}}">
+            <button mat-button type="submit">Submit</button>
+        </form>
+    </div>
 </mat-card>
