@@ -3,7 +3,7 @@
         <div *ngIf="name">
             <h2>Welcome, {{name}}!</h2>
         </div>
-        <div *ngIf="!name">
+        <div *ngIf="!email">
             <h2>You need to login in order to access that page</h2>
         </div>
     </mat-card-title>
@@ -18,19 +18,19 @@
         <div *ngIf="company">
             <strong>company</strong>: {{company}}
         </div>
-        <div *ngIf="name">
+        <div *ngIf="email">
             <h2>links you can access</h2>
             <a mat-raised-button routerLink="/search">Search</a>
         </div>
-        <div *ngIf="!name">
+        <div *ngIf="!email">
             <p>Nothing to show yet</p>
         </div>
     </mat-card-content>
     <mat-card-actions>
-        <div *ngIf="name">
+        <div *ngIf="email">
             <button (click)="logout()" mat-raised-button>Logout</button>
         </div>
-        <div *ngIf="!name">
+        <div *ngIf="!email">
             <button (click)="login()" mat-raised-button>Login</button>
         </div>
     </mat-card-actions>

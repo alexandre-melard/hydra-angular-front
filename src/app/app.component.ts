@@ -13,6 +13,13 @@ export class AppComponent {
 
     constructor(private oauthService: OAuthService) {
         this.configure();
+        let color = 'steelblue';
+        if (window.location.hostname === 'auth-front') {
+            color = 'darkred';
+        } else if (window.location.hostname === 'second-client') {
+            color = '#775';
+        }
+        document.body.style.backgroundColor = color;
     }
 
     private configure() {
